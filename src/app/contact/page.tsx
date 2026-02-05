@@ -48,12 +48,16 @@ export default function ContactPage() {
                     </div>
 
                     <div className="relative aspect-video w-full grayscale hover:grayscale-0 transition-all duration-700 rounded-sm overflow-hidden border border-white/10">
-                        {/* Placeholder for Map */}
-                        <div className="absolute inset-0 bg-navy-dark flex flex-col items-center justify-center space-y-4">
-                            <MapPin className="w-12 h-12 text-neon-red" />
-                            <span className="text-gray-500 font-bold tracking-widest uppercase">Carte Interactive</span>
-                            <Button variant="outline" size="sm">Ouvrir dans Google Maps</Button>
-                        </div>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.498428867384!2d2.3814673117467774!3d48.867769971213324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66dfb377f7c4b%3A0x6e3c0b5d5b5b5b5b!2s123%20Av.%20de%20la%20R%C3%A9publique%2C%2075011%20Paris!5e0!3m2!1sfr!2sfr!4v1707130000000!5m2!1sfr!2sfr"
+                            width="100%"
+                            height="100%"
+                            style={{ border: 0 }}
+                            allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                            className="absolute inset-0 w-full h-full"
+                        ></iframe>
                     </div>
                 </div>
 
