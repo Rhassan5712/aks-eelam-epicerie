@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase";
 import Button from "@/components/ui/Button";
-import { ArrowLeft, Save, Loader2 } from "lucide-react";
+import { ArrowLeft, Save, Loader2, Upload } from "lucide-react";
 import Link from "next/link";
 
 interface ProductFormProps {
@@ -150,21 +150,98 @@ export default function ProductForm({ product }: ProductFormProps) {
                     />
                 </div>
 
-                <div className="space-y-2">
-                    <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">URL de l&apos;image (Ex: /images/produit.png)</label>
-                    <input
-                        type="text"
-                        name="image"
-                        value={formData.image}
-                        onChange={handleChange}
-                        className="w-full bg-navy-deep border border-white/10 rounded-xl py-3 px-4 text-white focus:border-neon-cyan outline-none transition-colors"
-                        placeholder="https://..."
-                    />
-                    {formData.image && (
-                        <div className="mt-2 text-xs text-gray-500">
-                            Aperçu : <img src={formData.image} alt="Aperçu" className="h-20 w-auto rounded-lg inline-block border border-white/10" />
+                <div className="space-y-4">
+                    <label className="text-xs font-bold text-gray-400 uppercase tracking-widest block">Image du produit</label>
+
+                    <div className="flex flex-col md:flex-row gap-6 items-start">
+                        <div className="flex-1 w-full space-y-4">
+                            <div className="space-y-2">
+                                <label className="text-[10px] text-gray-500 uppercase font-bold">Lien de l&apos;image (URL)</label>
+                                <input
+                                    type="text"
+                                    name="image"
+                                    value={formData.image}
+                                    onChange={handleChange}
+                                    className="w-full bg-navy-deep border border-white/10 rounded-xl py-3 px-4 text-white focus:border-neon-cyan outline-none transition-colors"
+                                    placeholder="https://..."
+                                />
+                            </div>
+
+                            <div className="relative">
+                                <div className="absolute inset-0 flex items-center" aria-hidden="true">
+                                    <div className="w-full border-t border-white/5"></div>
+                                </div>
+                                <div className="relative flex justify-center text-xs uppercase">
+                                    <span className="bg-navy-light px-2 text-gray-500 font-bold">OU</span>
+                                </div>
+                            </div>
+
+                            <div className="space-y-2">
+                                <label className="text-[10px] text-gray-500 uppercase font-bold">Télécharger un fichier</label>
+                                <div className="flex items-center gap-4">
+                                    <label className="flex-1 flex flex-col items-center justify-center border-2 border-dashed border-white/10 rounded-xl py-6 px-4 hover:border-neon-cyan/50 hover:bg-white/5 transition-all cursor-pointer group">
+                                        <Upload className="w-8 h-8 text-gray-500 group-hover:text-neon-cyan transition-colors mb-2" />
+                                        <span className="text-sm text-gray-400 group-hover:text-white transition-colors">
+                                            Cliquez pour choisir une image
+                                        </span>
+                                        <input
+                                            type="file"
+                                            className="hidden"
+                                            accept="image/*"
+                                            onChange={async (e) => {
+                                                const file = e.target.files?.[0];
+                                                if (!file) return;
+
+                                                setLoading(true);
+                                                setError(null);
+
+                                                try {
+                                                    const fileExt = file.name.split('.').pop();
+                                                    const fileName = `${Math.random().toString(36).substring(2)}.${fileExt}`;
+                                                    const filePath = `${fileName}`;
+
+                                                    const { error: uploadError, data } = await supabase.storage
+                                                        .from('products')
+                                                        .upload(filePath, file);
+
+                                                    if (uploadError) throw uploadError;
+
+                                                    const { data: { publicUrl } } = supabase.storage
+                                                        .from('products')
+                                                        .getPublicUrl(filePath);
+
+                                                    setFormData(prev => ({ ...prev, image: publicUrl }));
+                                                } catch (err: any) {
+                                                    setError("Erreur lors du téléchargement : " + err.message);
+                                                } finally {
+                                                    setLoading(false);
+                                                }
+                                            }}
+                                        />
+                                    </label>
+                                </div>
+                            </div>
                         </div>
-                    )}
+
+                        {formData.image && (
+                            <div className="w-full md:w-32 lg:w-48 aspect-square bg-navy-deep rounded-2xl overflow-hidden border border-white/10 relative group shadow-2xl">
+                                <img
+                                    src={formData.image}
+                                    alt="Aperçu"
+                                    className="w-full h-full object-cover"
+                                />
+                                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <button
+                                        type="button"
+                                        onClick={() => setFormData(prev => ({ ...prev, image: "" }))}
+                                        className="text-xs text-red-400 hover:text-red-300 font-bold uppercase tracking-widest"
+                                    >
+                                        Supprimer
+                                    </button>
+                                </div>
+                            </div>
+                        )}
+                    </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-6 pt-4 border-t border-white/5">
