@@ -26,10 +26,10 @@ export default function Navbar() {
 
                     {/* Desktop Menu */}
                     <div className="hidden md:flex items-center space-x-8">
-                        <Link href="/" className="text-gray-300 hover:text-neon-cyan transition-colors font-bold uppercase text-xs tracking-widest">Accueil</Link>
-                        <Link href="/produits" className="text-gray-300 hover:text-neon-cyan transition-colors font-bold uppercase text-xs tracking-widest">Produits</Link>
-                        <Link href="/services" className="text-gray-300 hover:text-neon-cyan transition-colors font-bold uppercase text-xs tracking-widest">Services</Link>
-                        <Link href="/contact" className="text-gray-300 hover:text-neon-cyan transition-colors font-bold uppercase text-xs tracking-widest">Contact</Link>
+                        <Link href="/" className="text-gray-300 animated-underline font-bold uppercase text-xs tracking-widest hover:text-white transition-colors">Accueil</Link>
+                        <Link href="/produits" className="text-gray-300 animated-underline font-bold uppercase text-xs tracking-widest hover:text-white transition-colors">Produits</Link>
+                        <Link href="/services" className="text-gray-300 animated-underline font-bold uppercase text-xs tracking-widest hover:text-white transition-colors">Services</Link>
+                        <Link href="/contact" className="text-gray-300 animated-underline font-bold uppercase text-xs tracking-widest hover:text-white transition-colors">Contact</Link>
                     </div>
 
                     <div className="flex items-center space-x-4">

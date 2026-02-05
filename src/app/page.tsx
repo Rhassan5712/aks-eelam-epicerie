@@ -25,7 +25,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="space-y-4"
           >
-            <h2 className="font-bold tracking-[0.2em] text-sm md:text-base uppercase text-brand-gradient">
+            <h2 className="font-bold tracking-[0.2em] text-sm md:text-base uppercase text-brand-gradient text-glow-hover cursor-default transition-all duration-300">
               Bienvenue chez AKS EELAM
             </h2>
             <h1 className="text-5xl md:text-8xl font-black text-white tracking-tighter leading-tight">
