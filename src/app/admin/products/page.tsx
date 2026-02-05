@@ -4,7 +4,7 @@ import { Plus, Edit, Trash2 } from "lucide-react";
 import Image from "next/image";
 
 export default async function AdminProductsPage() {
-    const supabase = createClient();
+    const supabase = await createClient();
     const { data: products, error } = await supabase
         .from("products")
         .select("*")
