@@ -89,7 +89,7 @@ export default function AccountPage() {
                             </p>
                             <Link
                                 href="/produits"
-                                className="inline-block bg-neon-gold hover:bg-neon-yellow text-navy-deep px-6 py-3 rounded-xl font-bold transition-all shadow-lg shadow-neon-gold/20"
+                                className="inline-block bg-brand-gradient hover:brightness-110 text-navy-deep px-6 py-3 rounded-xl font-bold transition-all shadow-lg shadow-neon-green/20"
                             >
                                 Explorer la boutique
                             </Link>

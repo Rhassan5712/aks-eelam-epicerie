@@ -67,6 +67,10 @@ body {
   text-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
 }
 
+.bg-brand-gradient {
+  background: linear-gradient(to bottom, var(--color-neon-green), var(--color-neon-yellow));
+}
+
 .glass-morphism {
   background: rgba(15, 23, 42, 0.6);
   backdrop-filter: blur(12px);
