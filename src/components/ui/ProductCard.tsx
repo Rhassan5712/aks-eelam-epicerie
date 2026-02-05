@@ -45,17 +45,31 @@ export default function ProductCard({ product }: ProductCardProps) {
                                 product.category === 'boissons' ? '🥤' : '🧼'}
                     </span>
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/80 via-transparent to-transparent opacity-60" />
+                <div className={`absolute inset-0 bg-gradient-to-t from-navy-deep/80 via-transparent to-transparent opacity-60 ${product.inStock === false ? 'backdrop-grayscale' : ''}`} />
 
                 {product.isFeatured && (
-                    <div className="absolute top-3 left-3">
+                    <div className="absolute top-3 left-3 z-10">
                         <Badge variant="yellow">Vedette</Badge>
                     </div>
                 )}
 
+                <div className="absolute top-3 right-3 z-10">
+                    {product.inStock === false ? (
+                        <Badge variant="red">En rupture</Badge>
+                    ) : (
+                        <Badge variant="green">En stock</Badge>
+                    )}
+                </div>
+
                 <button
                     onClick={handleAdd}
-                    className={`absolute bottom-4 right-4 p-3 rounded-full shadow-2xl transition-all duration-300 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 ${added ? 'bg-neon-green text-white' : 'bg-white text-navy-deep hover:bg-neon-cyan hover:text-white'}`}
+                    disabled={product.inStock === false}
+                    className={`absolute bottom-4 right-4 p-3 rounded-full shadow-2xl transition-all duration-300 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 ${product.inStock === false
+                        ? 'bg-slate-700 text-slate-400 cursor-not-allowed hidden'
+                        : added
+                            ? 'bg-neon-green text-white'
+                            : 'bg-white text-navy-deep hover:bg-neon-cyan hover:text-white'
+                        }`}
                 >
                     {added ? <Check className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
                 </button>

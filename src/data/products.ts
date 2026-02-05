@@ -6,6 +6,7 @@ export interface Product {
     image: string;
     description: string;
     isFeatured?: boolean;
+    inStock?: boolean;
 }
 
 export const categories = [
@@ -50,6 +51,7 @@ export const products: Product[] = [
         category: 'exotique',
         image: '/images/products/coconut.png',
         description: 'Lait de coco onctueux pour vos recettes.',
+        inStock: false,
     },
     {
         id: '5',
@@ -74,6 +76,7 @@ export const products: Product[] = [
         category: 'alimentation',
         image: '/images/products/brets-yakitori.png',
         description: 'Chips aux saveurs japonaises de Yakitori.',
+        inStock: false,
     },
     {
         id: '8',
@@ -122,6 +125,7 @@ export const products: Product[] = [
         category: 'boissons',
         image: '/images/products/redbull-winter.png',
         description: 'Red Bull The Winter Edition: Goût Pomme Fuji & Gingembre.',
+        inStock: false,
     },
     {
         id: '14',
