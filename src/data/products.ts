@@ -12,7 +12,7 @@ export interface Product {
 export const categories = [
     { id: 'alimentation', name: 'Alimentation Générale', icon: '🛒', color: 'cyan' },
     { id: 'exotique', name: 'Produits Exotiques & Épices', icon: '🌶️', color: 'yellow' },
-    { id: 'boissons', name: 'Boissons Fraîches', icon: '🥤', color: 'red' },
+    { id: 'boissons', name: 'Boissons Fraîches', icon: '🥤', color: 'cyan' },
     { id: 'hygiene', name: 'Hygiène & Entretien', icon: '🧼', color: 'green' },
 ];
 

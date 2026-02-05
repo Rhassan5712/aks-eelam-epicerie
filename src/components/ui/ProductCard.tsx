@@ -71,7 +71,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             <div className="p-5 space-y-3 flex-1 flex flex-col">
                 <div className="flex justify-between items-start">
                     <div className="flex flex-wrap gap-2">
-                        <Badge variant={product.category === 'exotique' ? 'yellow' : product.category === 'boissons' ? 'red' : 'cyan'}>
+                        <Badge variant={product.category === 'exotique' ? 'yellow' : 'cyan'}>
                             {product.category}
                         </Badge>
                         {product.inStock === false ? (
