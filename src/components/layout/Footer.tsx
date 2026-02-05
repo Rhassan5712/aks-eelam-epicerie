@@ -42,7 +42,7 @@ export default function Footer() {
                     <ul className="space-y-4 text-sm text-gray-400">
                         <li className="flex items-start space-x-2">
                             <MapPin className="w-4 h-4 text-neon-red flex-shrink-0" />
-                            <span>123 Avenue de la République, 75011 Paris</span>
+                            <span>679 rue d'abbeville 80000 Amiens</span>
                         </li>
                         <li className="flex items-center space-x-2">
                             <Phone className="w-4 h-4 text-neon-green" />

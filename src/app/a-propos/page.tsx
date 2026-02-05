@@ -54,7 +54,7 @@ export default function AboutPage() {
                             Fondée il y a plus de 10 ans, AKS EELAM est née d'une volonté simple : offrir aux Parisiens le meilleur des produits exotiques tout en assurant un service de proximité irréprochable.
                         </p>
                         <p>
-                            Située au 123 Avenue de la République, notre boutique est devenue un lieu de rencontre pour les amateurs de saveurs d'ailleurs et ceux qui cherchent la qualité au juste prix.
+                            Située au 679 rue d'abbeville 80000 Amiens, notre boutique est devenue un lieu de rencontre pour les amateurs de saveurs d'ailleurs et ceux qui cherchent la qualité au juste prix.
                         </p>
                     </div>
 

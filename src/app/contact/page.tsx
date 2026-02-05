@@ -36,8 +36,8 @@ export default function ContactPage() {
                         <div className="glass-morphism p-6 border border-white/5 space-y-4">
                             <MapPin className="w-8 h-8 text-neon-red" />
                             <h3 className="font-bold text-brand-gradient uppercase italic">Adresse</h3>
-                            <p className="text-gray-400 text-sm">123 Avenue de la République, 75011 Paris</p>
-                            <p className="text-gray-500 text-xs">Métro: Parmentier (L3)</p>
+                            <p className="text-gray-400 text-sm">679 rue d'abbeville 80000 Amiens</p>
+                            <p className="text-gray-500 text-xs">Amiens</p>
                         </div>
                         <div className="glass-morphism p-6 border border-white/5 space-y-4">
                             <Clock className="w-8 h-8 text-neon-yellow" />
@@ -49,7 +49,7 @@ export default function ContactPage() {
 
                     <div className="relative aspect-video w-full grayscale hover:grayscale-0 transition-all duration-700 rounded-sm overflow-hidden border border-white/10">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.498428867384!2d2.3814673117467774!3d48.867769971213324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66dfb377f7c4b%3A0x6e3c0b5d5b5b5b5b!2s123%20Av.%20de%20la%20R%C3%A9publique%2C%2075011%20Paris!5e0!3m2!1sfr!2sfr!4v1707130000000!5m2!1sfr!2sfr"
+                            src="https://maps.google.com/maps?q=679+rue+d'abbeville+80000+amiens&t=&z=15&ie=UTF8&iwloc=&output=embed"
                             width="100%"
                             height="100%"
                             style={{ border: 0 }}
