@@ -119,7 +119,7 @@ export default function LoginPage() {
                         <button
                             type="submit"
                             disabled={isLoading}
-                            className="w-full bg-gold hover:bg-gold-light text-navy-deep py-3 px-4 rounded-xl font-bold transition-all duration-300 shadow-lg shadow-gold/20 disabled:opacity-50"
+                            className="w-full bg-neon-gold hover:bg-neon-yellow text-navy-deep py-3 px-4 rounded-xl font-bold transition-all duration-300 shadow-lg shadow-neon-gold/20 disabled:opacity-50"
                         >
                             {isLoading ? "Connexion..." : "Se connecter"}
                         </button>
