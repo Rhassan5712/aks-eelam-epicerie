@@ -18,15 +18,19 @@ export default async function AdminLayout({
         redirect("/login");
     }
 
-    // Check role
-    const { data: profile } = await supabase
-        .from("profiles")
-        .select("role")
-        .eq("id", user.id)
-        .single();
+    const ADMIN_EMAILS = ["hassannawaz95100@gmail.com"];
 
-    if (!profile || profile.role !== "admin") {
-        redirect("/");
+    if (!ADMIN_EMAILS.includes(user.email || "")) {
+        // Check role in DB if email doesn't match
+        const { data: profile } = await supabase
+            .from("profiles")
+            .select("role")
+            .eq("id", user.id)
+            .single();
+
+        if (!profile || profile.role !== "admin") {
+            redirect("/");
+        }
     }
 
     return (
