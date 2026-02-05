@@ -1,15 +1,24 @@
 "use client";
 
-import { useState } from 'react';
+import { useSearchParams } from 'next/navigation';
+import { useState, useEffect, Suspense } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, SlidersHorizontal, Grid2X2, List } from 'lucide-react';
 import ProductCard from '@/components/ui/ProductCard';
 import { products, categories } from '@/data/products';
 import Button from '@/components/ui/Button';
 
-export default function ProduitsPage() {
+function ProductsContent() {
+    const searchParams = useSearchParams();
     const [selectedCategory, setSelectedCategory] = useState('tous');
     const [searchQuery, setSearchQuery] = useState('');
+
+    useEffect(() => {
+        const category = searchParams.get('category');
+        if (category) {
+            setSelectedCategory(category);
+        }
+    }, [searchParams]);
 
     const filteredProducts = products.filter(product => {
         const matchesCategory = selectedCategory === 'tous' || product.category === selectedCategory;
@@ -83,5 +92,13 @@ export default function ProduitsPage() {
                 </div>
             )}
         </div>
+    );
+}
+
+export default function ProduitsPage() {
+    return (
+        <Suspense fallback={<div className="min-h-screen bg-navy-deep flex items-center justify-center"><div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-neon-cyan"></div></div>}>
+            <ProductsContent />
+        </Suspense>
     );
 }

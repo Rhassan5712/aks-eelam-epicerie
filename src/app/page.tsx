@@ -104,18 +104,19 @@ export default function Home() {
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {categories.map((cat, idx) => (
-            <motion.div
-              key={cat.id}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: idx * 0.1 }}
-              className="group relative h-64 overflow-hidden border border-white/10 flex flex-col items-center justify-center p-6 cursor-pointer hover:border-white/30 transition-all duration-500"
-            >
-              <div className="absolute inset-0 bg-navy-dark group-hover:bg-navy-deep transition-colors" />
-              <span className="text-6xl mb-4 relative z-10 transition-transform duration-500 group-hover:scale-110">{cat.icon}</span>
-              <h3 className="text-lg font-bold text-white relative z-10 text-center">{cat.name}</h3>
-              <div className={`absolute bottom-0 left-0 right-0 h-1 transition-all duration-500 bg-transparent group-hover:bg-neon-${cat.color}`} />
-            </motion.div>
+            <Link key={cat.id} href={`/produits?category=${cat.id}`} className="block">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: idx * 0.1 }}
+                className="group relative h-64 overflow-hidden border border-white/10 flex flex-col items-center justify-center p-6 cursor-pointer hover:border-white/30 transition-all duration-500"
+              >
+                <div className="absolute inset-0 bg-navy-dark group-hover:bg-navy-deep transition-colors" />
+                <span className="text-6xl mb-4 relative z-10 transition-transform duration-500 group-hover:scale-110">{cat.icon}</span>
+                <h3 className="text-lg font-bold text-white relative z-10 text-center">{cat.name}</h3>
+                <div className={`absolute bottom-0 left-0 right-0 h-1 transition-all duration-500 bg-transparent group-hover:bg-neon-${cat.color}`} />
+              </motion.div>
+            </Link>
           ))}
         </div>
       </section>
