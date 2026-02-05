@@ -53,13 +53,6 @@ export default function ProductCard({ product }: ProductCardProps) {
                     </div>
                 )}
 
-                <div className="absolute top-3 right-3 z-10">
-                    {product.inStock === false ? (
-                        <Badge variant="red">En rupture</Badge>
-                    ) : (
-                        <Badge variant="green">En stock</Badge>
-                    )}
-                </div>
 
                 <button
                     onClick={handleAdd}
@@ -77,9 +70,16 @@ export default function ProductCard({ product }: ProductCardProps) {
 
             <div className="p-5 space-y-3 flex-1 flex flex-col">
                 <div className="flex justify-between items-start">
-                    <Badge variant={product.category === 'exotique' ? 'yellow' : product.category === 'boissons' ? 'red' : 'cyan'}>
-                        {product.category}
-                    </Badge>
+                    <div className="flex flex-wrap gap-2">
+                        <Badge variant={product.category === 'exotique' ? 'yellow' : product.category === 'boissons' ? 'red' : 'cyan'}>
+                            {product.category}
+                        </Badge>
+                        {product.inStock === false ? (
+                            <Badge variant="red">En rupture</Badge>
+                        ) : (
+                            <Badge variant="green">En stock</Badge>
+                        )}
+                    </div>
                     <span className="text-xl font-black text-white tracking-tighter">{product.price.toFixed(2)}€</span>
                 </div>
                 <h3 className="text-lg font-bold text-gray-100 group-hover:text-neon-cyan transition-colors uppercase italic tracking-tight">{product.name}</h3>
