@@ -35,7 +35,7 @@ export default function ServicesPage() {
             <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4 relative z-10 text-center space-y-4">
                     <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase">
-                        NOS <span className="neon-text-yellow">SERVICES</span>
+                        NOS <span className="text-brand-gradient">SERVICES</span>
                     </h1>
                     <p className="text-gray-400 max-w-2xl mx-auto">
                         Plus qu'une simple épicerie, nous vous simplifions la vie avec des services adaptés à votre quotidien urbain.
