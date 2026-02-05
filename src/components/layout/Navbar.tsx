@@ -19,11 +19,8 @@ export default function Navbar() {
             <nav className="fixed top-0 left-0 right-0 z-50 glass-morphism h-16 border-b border-white/10">
                 <div className="max-w-7xl mx-auto px-4 h-full flex items-center justify-between">
                     <Link href="/" className="flex items-center">
-                        <span className="text-2xl font-bold tracking-tighter neon-text-yellow mr-2">
-                            AKS
-                        </span>
-                        <span className="text-2xl font-bold tracking-tighter neon-text-green-light">
-                            EELAM
+                        <span className="text-2xl font-bold tracking-tighter text-brand-gradient mr-2">
+                            AKS EELAM
                         </span>
                     </Link>
 

@@ -24,7 +24,7 @@ export default function AboutPage() {
                         animate={{ opacity: 1, y: 0 }}
                         className="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase"
                     >
-                        L'HISTOIRE D'<span className="neon-text-cyan">AKS EELAM</span>
+                        L'HISTOIRE D'<span className="text-brand-gradient">AKS EELAM</span>
                     </motion.h1>
                     <p className="text-gray-400 max-w-2xl mx-auto text-xl font-light">
                         Plus qu'une épicerie, un pont entre les cultures au cœur de Paris.

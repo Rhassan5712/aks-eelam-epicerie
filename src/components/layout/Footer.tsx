@@ -7,8 +7,7 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div className="space-y-4">
                     <h3 className="text-xl font-bold">
-                        <span className="neon-text-yellow mr-2">AKS</span>
-                        <span className="neon-text-green-light">EELAM</span>
+                        <span className="text-brand-gradient">AKS EELAM</span>
                     </h3>
                     <p className="text-gray-400 text-sm leading-relaxed">
                         Votre épicerie du quotidien... et d'ailleurs. Des produits exotiques aux nécessités courantes, nous sommes là pour vous.
@@ -58,7 +57,7 @@ export default function Footer() {
             </div>
 
             <div className="max-w-7xl mx-auto px-4 mt-12 pt-6 border-t border-white/5 text-center text-xs text-gray-600">
-                © {new Date().getFullYear()} <span className="text-neon-yellow">AKS</span> <span className="text-neon-green-light">EELAM</span>. Tous droits réservés.
+                © {new Date().getFullYear()} <span className="text-brand-gradient">AKS EELAM</span>. Tous droits réservés.
             </div>
         </footer>
     );
