@@ -42,7 +42,7 @@ export default function ContactPage() {
                         <div className="glass-morphism p-6 border border-white/5 space-y-4">
                             <Clock className="w-8 h-8 text-neon-yellow" />
                             <h3 className="font-bold text-white uppercase italic">Ouverture</h3>
-                            <p className="text-gray-400 text-sm">Lun - Dim: 09:00 - 22:00</p>
+                            <p className="text-gray-400 text-sm">Lun - Dim: 09:30 - 04:00</p>
                             <p className="text-gray-500 text-xs">Ouvert 7j/7</p>
                         </div>
                     </div>
