@@ -126,12 +126,17 @@ export default function LoginPage() {
                     </form>
                 </div>
 
-                <p className="text-center text-slate-400 text-sm">
-                    Pas encore de compte ?{' '}
-                    <Link href="/register" className="text-gold hover:text-gold-light font-semibold underline underline-offset-4">
+                <div className="mt-6 pt-6 border-t border-white/10">
+                    <p className="text-center text-slate-400 text-sm mb-4">
+                        Pas encore de compte ?
+                    </p>
+                    <Link
+                        href="/register"
+                        className="w-full block text-center bg-slate-800 hover:bg-slate-700 text-white py-3 px-4 rounded-xl font-semibold transition-all duration-300 border border-slate-700 hover:border-slate-600"
+                    >
                         Créer un compte
                     </Link>
-                </p>
+                </div>
             </div>
         </div>
     );

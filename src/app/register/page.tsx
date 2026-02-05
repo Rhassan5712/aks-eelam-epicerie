@@ -189,12 +189,17 @@ export default function RegisterPage() {
                     </form>
                 </div>
 
-                <p className="text-center text-slate-400 text-sm">
-                    Déjà un compte ?{' '}
-                    <Link href="/login" className="text-gold hover:text-gold-light font-semibold underline underline-offset-4">
+                <div className="mt-6 pt-6 border-t border-white/10">
+                    <p className="text-center text-slate-400 text-sm mb-4">
+                        Déjà un compte ?
+                    </p>
+                    <Link
+                        href="/login"
+                        className="w-full block text-center bg-slate-800 hover:bg-slate-700 text-white py-3 px-4 rounded-xl font-semibold transition-all duration-300 border border-slate-700 hover:border-slate-600"
+                    >
                         Se connecter
                     </Link>
-                </p>
+                </div>
             </div>
         </div>
     );

@@ -90,12 +90,37 @@ export default function Navbar() {
                 </div>
 
                 {/* Mobile Menu */}
+                {/* Mobile Menu */}
                 {isOpen && (
                     <div className="md:hidden glass-morphism border-b border-white/10 py-4 px-4 space-y-4 animate-in fade-in slide-in-from-top-4">
                         <Link href="/" className="block text-gray-300 font-bold uppercase text-xs" onClick={() => setIsOpen(false)}>Accueil</Link>
                         <Link href="/produits" className="block text-gray-300 font-bold uppercase text-xs" onClick={() => setIsOpen(false)}>Produits</Link>
                         <Link href="/services" className="block text-gray-300 font-bold uppercase text-xs" onClick={() => setIsOpen(false)}>Services</Link>
                         <Link href="/contact" className="block text-gray-300 font-bold uppercase text-xs" onClick={() => setIsOpen(false)}>Contact</Link>
+                        <div className="border-t border-white/10 pt-4 mt-4">
+                            {user ? (
+                                <div className="space-y-4">
+                                    <Link href="/account" className="flex items-center gap-2 text-gray-300 font-bold uppercase text-xs" onClick={() => setIsOpen(false)}>
+                                        <User className="w-5 h-5" />
+                                        Mon Compte
+                                    </Link>
+                                    <button
+                                        onClick={() => {
+                                            signOut();
+                                            setIsOpen(false);
+                                        }}
+                                        className="text-gray-300 font-bold uppercase text-xs text-left w-full hover:text-neon-red"
+                                    >
+                                        Se déconnecter
+                                    </button>
+                                </div>
+                            ) : (
+                                <Link href="/login" className="flex items-center gap-2 text-neon-cyan font-bold uppercase text-xs" onClick={() => setIsOpen(false)}>
+                                    <User className="w-5 h-5" />
+                                    Se connecter / S'inscrire
+                                </Link>
+                            )}
+                        </div>
                     </div>
                 )}
             </nav>
