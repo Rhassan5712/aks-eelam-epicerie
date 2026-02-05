@@ -60,7 +60,7 @@ body {
 }
 
 .text-brand-gradient {
-  background: linear-gradient(to bottom, var(--color-neon-green) 0%, var(--color-neon-yellow) 100%);
+  background: linear-gradient(to bottom, var(--color-neon-green) 35%, var(--color-neon-yellow) 65%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
