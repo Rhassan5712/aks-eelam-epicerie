@@ -37,7 +37,7 @@ export default function AboutPage() {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                     {stats.map((stat, idx) => (
                         <div key={idx} className="text-center space-y-2">
-                            <div className="text-3xl md:text-5xl font-black neon-text-yellow">{stat.value}</div>
+                            <div className="text-3xl md:text-5xl font-black text-brand-gradient">{stat.value}</div>
                             <div className="text-xs uppercase tracking-widest text-gray-500">{stat.label}</div>
                         </div>
                     ))}
