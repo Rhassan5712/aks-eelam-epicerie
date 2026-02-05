@@ -22,7 +22,16 @@ export default function LoginPage() {
         try {
             const { error } = await signInWithPassword(email, password);
             if (error) {
-                setError(error.message);
+                // Traduction des erreurs courantes
+                if (error.message.includes("Invalid login credentials")) {
+                    setError("Email ou mot de passe incorrect.");
+                } else if (error.message.includes("Email not confirmed")) {
+                    setError("Veuillez confirmer votre email avant de vous connecter.");
+                } else if (error.message.includes("Rate limit exceeded") || error.message.includes("Too many requests")) {
+                    setError("Trop de tentatives de connexion. Veuillez patienter.");
+                } else {
+                    setError(error.message);
+                }
             } else {
                 router.push('/');
             }

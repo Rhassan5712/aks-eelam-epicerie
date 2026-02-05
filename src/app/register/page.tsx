@@ -32,7 +32,16 @@ export default function RegisterPage() {
         try {
             const { error } = await signUp(email, password, fullName);
             if (error) {
-                setError(error.message);
+                // Traduction des erreurs courantes de Supabase
+                if (error.message.includes("Rate limit exceeded") || error.message.includes("Too many requests")) {
+                    setError("Trop de tentatives. Veuillez patienter un moment avant de réessayer.");
+                } else if (error.message.includes("User already registered")) {
+                    setError("Cet email est déjà utilisé par un autre compte.");
+                } else if (error.message.includes("Password should be at least")) {
+                    setError("Le mot de passe doit contenir au moins 6 caractères.");
+                } else {
+                    setError(error.message);
+                }
             } else {
                 setSuccess(true);
             }
