@@ -32,7 +32,7 @@ export default function Footer() {
                     <h4 className="font-bold mb-4 text-white">Horaires</h4>
                     <ul className="space-y-2 text-sm text-gray-400">
                         <li>Lundi - Dimanche</li>
-                        <li className="text-neon-yellow">09:30 - 04:00</li>
+                        <li className="text-brand-gradient font-bold">09:30 - 04:00</li>
                         <li>Ouvert 7j/7</li>
                     </ul>
                 </div>
