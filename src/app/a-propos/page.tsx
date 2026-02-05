@@ -93,7 +93,7 @@ export default function AboutPage() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                         {[
                             { icon: ShieldCheck, title: "Qualité Garantie", desc: "Nous sélectionnons rigoureusement chaque fournisseur pour vous garantir la fraîcheur.", color: "cyan" },
-                            { icon: Truck, title: "Service Rapide", desc: "Un retrait en magasin rapide et des livraisons locales pour votre confort.", color: "yellow" },
+                            { icon: Truck, title: "Service Rapide", desc: "Un retrait en magasin rapide pour votre confort.", color: "yellow" },
                             { icon: Heart, title: "Proximité", desc: "Ouvert tous les jours jusque tard pour être là quand vous avez besoin de nous.", color: "red" }
                         ].map((v, i) => {
                             const Icon = v.icon;

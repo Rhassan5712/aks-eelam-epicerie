@@ -7,13 +7,6 @@ import Button from '@/components/ui/Button';
 export default function ServicesPage() {
     const services = [
         {
-            icon: Truck,
-            title: "Livraison Locale",
-            desc: "Nous livrons vos courses directement à votre porte dans le 11ème arrondissement et ses environs.",
-            color: "cyan",
-            details: ["Livraison en 1h", "Frais fixes: 5€", "Gratuit dès 50€"]
-        },
-        {
             icon: ShoppingBag,
             title: "Click & Collect",
             desc: "Commandez en ligne et récupérez vos articles en magasin en moins de 20 minutes.",
@@ -93,7 +86,7 @@ export default function ServicesPage() {
             <section className="max-w-5xl mx-auto px-4 mt-24">
                 <div className="glass-morphism p-12 border border-neon-cyan/30 text-center space-y-8 relative overflow-hidden">
                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-neon-cyan to-transparent" />
-                    <h2 className="text-3xl font-bold text-white italic">BESOIN D'UNE LIVRAISON URGENTE ?</h2>
+                    <h2 className="text-3xl font-bold text-white italic">UNE QUESTION SUR LE STOCK ?</h2>
                     <p className="text-xl text-gray-400">Contactez-nous directement par téléphone pour une prise en charge immédiate.</p>
                     <div className="flex flex-center justify-center">
                         <Button variant="neon-cyan" size="lg" className="text-xl px-12 h-16">
