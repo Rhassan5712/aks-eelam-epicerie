@@ -2,6 +2,7 @@ import { createClient } from "@/lib/supabase-server-component";
 import Link from "next/link";
 import { Plus, Edit, Trash2 } from "lucide-react";
 import Image from "next/image";
+import DeleteProductButton from "./DeleteProductButton";
 
 export default async function AdminProductsPage() {
     const supabase = await createClient();
@@ -87,11 +88,7 @@ export default async function AdminProductsPage() {
                                                         <Edit className="w-4 h-4" />
                                                     </Link>
                                                     {/* We'll handle delete via a client component or form action later */}
-                                                    <button
-                                                        className="p-2 bg-red-500/10 hover:bg-red-500/20 text-red-500 rounded-lg transition-colors border border-red-500/20"
-                                                    >
-                                                        <Trash2 className="w-4 h-4" />
-                                                    </button>
+                                                    <DeleteProductButton productId={product.id} />
                                                 </div>
                                             </td>
                                         </tr>

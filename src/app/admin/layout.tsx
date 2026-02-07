@@ -18,7 +18,7 @@ export default async function AdminLayout({
         redirect("/login");
     }
 
-    const ADMIN_EMAILS = ["hassannawaz95100@gmail.com"];
+    const ADMIN_EMAILS = ["hassannawaz95100@gmail.com", "arthigankugan12@gmail.com"];
 
     if (!ADMIN_EMAILS.includes(user.email || "")) {
         // Check role in DB if email doesn't match

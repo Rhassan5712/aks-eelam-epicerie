@@ -60,6 +60,14 @@ export default function Navbar() {
                                         {profile?.full_name || user.email?.split('@')[0]}
                                     </span>
                                 </Link>
+                                {(profile?.role === 'admin' || ["hassannawaz95100@gmail.com", "arthigankugan12@gmail.com"].includes(user.email || "")) && (
+                                    <Link
+                                        href="/admin"
+                                        className="hidden md:flex items-center gap-2 text-neon-yellow hover:text-white transition-colors border border-neon-yellow/30 px-3 py-1 rounded-lg"
+                                    >
+                                        <span className="text-[10px] font-bold uppercase tracking-widest">Admin</span>
+                                    </Link>
+                                )}
                                 <button
                                     onClick={() => signOut()}
                                     className="text-[10px] font-bold text-slate-500 hover:text-neon-red uppercase tracking-widest transition-colors"

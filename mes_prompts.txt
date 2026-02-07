@@ -1,0 +1,105 @@
+npm run dev
+----------------------------------------
+stop run dev
+----------------------------------------
+npm run dev
+----------------------------------------
+stop run dev
+----------------------------------------
+le site est héberger sur vercel c'est parfait j'ai essayer de créer un nouveau compte pour me connecter cependant j'au eu cela "email rate limit exceeded" il ne faut pas qu'il y en ait. corrige et push
+----------------------------------------
+oui ca me va
+----------------------------------------
+comment faire pour que on augement la limite
+----------------------------------------
+npm run dev
+----------------------------------------
+j'aimerais que l'ors de l'étape de création de compte et meme pour se connecter il faudrais un bontout "se connecter" ajoute le
+----------------------------------------
+il faut que puisse me deconnecter quand j'appuie sur le bouton ca marche pas
+----------------------------------------
+regarde il faudrais un bouton "connecter" juste en dessous de mot de passe il permetrait de se conncecter en gros sans devoir appuiyer sur la touche "entre" du clavier
+----------------------------------------
+c'est parfait
+----------------------------------------
+créer une page pour l'orsque l'on appuie sur le profil une fois connecter on puisse voir par exemple un récapitulatif de nos achats, ou d'autre trucs. car pour l'instant c'est ecrit "404
+This page could not be found."
+----------------------------------------
+okay
+----------------------------------------
+change les horraires pour tous les jours de 9h30 a 4h
+----------------------------------------
+maintenant push tout ca pour que soit aussie effective sur le serveurs vercel
+----------------------------------------
+retire tout ce qui est livraison, c'est que du click and collect
+----------------------------------------
+au niveau des produits ca serait bien pour que chaque produit il y est une mention "en stock" ou "en rupture" met quelque produits en stock et d'autre en rupture pour voir comment ca rend
+----------------------------------------
+okay
+----------------------------------------
+parfait me je ne suis pas fan de la disposition met plutot en bas a coté des catégories par exemple a coté de "alimentation" ou "boissons"
+----------------------------------------
+pour le badge de la catégorie "boissons" met le de la meme couleur comme "alimentation"
+----------------------------------------
+pour le titre "aks eelam" fais un dégradé de couleurs comme l'image en reprenant les couleurs
+----------------------------------------
+il faut que tu équilibre le haut doit etre vert et le bas jaune
+----------------------------------------
+j'aimerais que tu ajoute des components pour fluidifier l'immersion et la rendre plus jolie avec une sorte d'animations quand on passe la souris sur les textes etc
+----------------------------------------
+okay
+----------------------------------------
+change la couleurs du mot services pour la meme couleurs dégradé que le titre
+----------------------------------------
+pour tous les mots ou tu a mis du jaune sauf les horraires applique la meme couleurs de dégradé
+----------------------------------------
+fais le aussi pour les horraires, ainsi que le logo "position" dans contact
+----------------------------------------
+rend fonctionnelle la carte intéractive dans contact
+----------------------------------------
+change l'adresse pour 679 rue d'abbeville 80000 amiens pareille pour la carte intéractive
+----------------------------------------
+le bouton "explorer la boutique" dans le profil du compte change sa couleurs aussi comme dit précedemment
+----------------------------------------
+y a un soucis il est caché par un carré noir
+----------------------------------------
+il faudrais que l'on puisse appuiyer sur les catégorie et que ca rédirige directement aussi
+----------------------------------------
+maintenant push tout ca pour vercel
+----------------------------------------
+ou est le back office ?
+----------------------------------------
+dans ce cas créer moi le back office
+----------------------------------------
+okay fais le
+----------------------------------------
+cookieStore.get is not a function
+src\lib\supabase-server-component.ts (13:40) @ Object.get
+11 |             cookies: {
+12 |                 get(name: string) {
+|                                        ^
+14 |                 },
+15 |                 set(name: string, value: string, options: CookieOptions) {
+16 |                     try {
+tu a maintenant accés a la supabase @mcp:supabase-mcp-server:
+----------------------------------------
+continue
+----------------------------------------
+importe tous les produits déja existants dans la base de donnée
+----------------------------------------
+y a le crayon pour éditer mais il n'est pas fonctionnel
+----------------------------------------
+ca marche cependant quand je veux edit je ne peux pas mettre d'image rend cela aussi fonctionnel
+----------------------------------------
+j'aimerais changer concernant l'admin. lie cela aux mails. le mail lier est "hassannawaz95100@gmail.com
+----------------------------------------
+parfait push tout ca sur vercel
+----------------------------------------
+explique juste comment faire pour que j'ajoute quelqu'un d'autre en admin ?
+----------------------------------------
+je veux choisir l'option 1 comment ca se passe ? la personne doit se créer un compte avec le mail ?
+----------------------------------------
+d'accord mais du la personne peut se créer le compte et apres je peux te donner son mail pour le mettre en admin et ca marchera ?
+----------------------------------------
+push tout sur vercel
+----------------------------------------
