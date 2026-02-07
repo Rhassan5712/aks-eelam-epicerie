@@ -24,7 +24,7 @@ export const products: Product[] = [
         category: 'exotique',
         image: '/images/products/curry.png',
         description: 'Mélange d\'épices authentique pour vos plats exotiques.',
-        isFeatured: true,
+        isFeatured: false,
     },
     {
         id: '2',
@@ -33,7 +33,7 @@ export const products: Product[] = [
         category: 'alimentation',
         image: '/images/products/rice.png',
         description: 'Riz basmati de qualité supérieure à grain long.',
-        isFeatured: true,
+        isFeatured: false,
     },
     {
         id: '3',
@@ -42,7 +42,7 @@ export const products: Product[] = [
         category: 'boissons',
         image: '/images/products/mango.png',
         description: 'Rafraîchissement intense à base de mangue fraîche.',
-        isFeatured: true,
+        isFeatured: false,
     },
     {
         id: '4',
@@ -60,6 +60,7 @@ export const products: Product[] = [
         category: 'boissons',
         image: '/images/products/fanta.png',
         description: 'Sélection de boissons rafraîchissantes Fanta aux saveurs variées.',
+        isFeatured: true,
     },
     {
         id: '6',
@@ -68,6 +69,7 @@ export const products: Product[] = [
         category: 'alimentation',
         image: '/images/products/brets-cheddar.png',
         description: 'Chips croustillantes au bon goût de cheddar et de jalapeño.',
+        isFeatured: true,
     },
     {
         id: '7',
@@ -109,6 +111,7 @@ export const products: Product[] = [
         category: 'boissons',
         image: '/images/products/monster-ultra-black.png',
         description: 'Boisson énergisante sans sucre au goût de cerise noire.',
+        isFeatured: true,
     },
     {
         id: '12',
@@ -142,6 +145,7 @@ export const products: Product[] = [
         category: 'alimentation',
         image: '/images/products/mochi-royal.png',
         description: 'Mochis traditionnels aux saveurs variées, tendres et délicieux.',
+        isFeatured: true,
     },
     {
         id: '16',

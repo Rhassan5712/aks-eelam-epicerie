@@ -75,7 +75,7 @@ export default function Home() {
             <Clock className="w-10 h-10 text-neon-yellow" />
             <div>
               <h4 className="font-bold text-white">Ouvert 7j/7</h4>
-              <p className="text-sm text-gray-400">09:30 - 04:00 non-stop</p>
+              <p className="text-sm text-gray-400">09:30 - 04:30 non-stop</p>
             </div>
           </div>
           <div className="p-8 flex items-center space-x-6 bg-navy-deep/40">

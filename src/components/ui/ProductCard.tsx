@@ -47,11 +47,7 @@ export default function ProductCard({ product }: ProductCardProps) {
                 )}
                 <div className={`absolute inset-0 bg-gradient-to-t from-navy-deep/80 via-transparent to-transparent opacity-60 ${product.inStock === false ? 'backdrop-grayscale' : ''}`} />
 
-                {product.isFeatured && (
-                    <div className="absolute top-3 left-3 z-10">
-                        <Badge variant="yellow">Vedette</Badge>
-                    </div>
-                )}
+
 
 
                 <button
@@ -71,6 +67,9 @@ export default function ProductCard({ product }: ProductCardProps) {
             <div className="p-5 space-y-3 flex-1 flex flex-col">
                 <div className="flex justify-between items-start">
                     <div className="flex flex-wrap gap-2">
+                        {product.isFeatured && (
+                            <Badge variant="yellow">Vedette</Badge>
+                        )}
                         <Badge variant={product.category === 'exotique' ? 'yellow' : 'cyan'}>
                             {product.category}
                         </Badge>

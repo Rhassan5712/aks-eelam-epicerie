@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { MapPin, Phone, Mail, Instagram, Facebook } from 'lucide-react';
+import { MapPin, Phone, Mail, Instagram } from 'lucide-react';
 
 export default function Footer() {
     return (
@@ -13,8 +13,7 @@ export default function Footer() {
                         Votre épicerie du quotidien... et d'ailleurs. Des produits exotiques aux nécessités courantes, nous sommes là pour vous.
                     </p>
                     <div className="flex space-x-4">
-                        <Link href="#" className="text-gray-400 hover:text-neon-pink"><Instagram className="w-5 h-5" /></Link>
-                        <Link href="#" className="text-gray-400 hover:text-neon-cyan"><Facebook className="w-5 h-5" /></Link>
+                        <Link href="https://www.instagram.com/akseelam_epicerie/" target="_blank" className="text-gray-400 hover:text-neon-pink"><Instagram className="w-5 h-5" /></Link>
                     </div>
                 </div>
 
@@ -32,7 +31,7 @@ export default function Footer() {
                     <h4 className="font-bold mb-4 text-white">Horaires</h4>
                     <ul className="space-y-2 text-sm text-gray-400">
                         <li>Lundi - Dimanche</li>
-                        <li className="text-brand-gradient font-bold">09:30 - 04:00</li>
+                        <li className="text-brand-gradient font-bold">09:30 - 04:30</li>
                         <li>Ouvert 7j/7</li>
                     </ul>
                 </div>
@@ -46,11 +45,11 @@ export default function Footer() {
                         </li>
                         <li className="flex items-center space-x-2">
                             <Phone className="w-4 h-4 text-neon-green" />
-                            <span>01 23 45 67 89</span>
+                            <span>09 60 15 45 66</span>
                         </li>
                         <li className="flex items-center space-x-2">
                             <Mail className="w-4 h-4 text-neon-cyan" />
-                            <span>contact@aks-eelam.fr</span>
+                            <span>akseelam23@gmail.com</span>
                         </li>
                     </ul>
                 </div>

@@ -24,13 +24,13 @@ export default function ContactPage() {
                         <div className="glass-morphism p-6 border border-white/5 space-y-4">
                             <Phone className="w-8 h-8 text-neon-green" />
                             <h3 className="font-bold text-white uppercase italic">Téléphone</h3>
-                            <p className="text-gray-400 text-sm">01 23 45 67 89</p>
+                            <p className="text-gray-400 text-sm">09 60 15 45 66</p>
                             <p className="text-gray-500 text-xs">Appel direct possible</p>
                         </div>
                         <div className="glass-morphism p-6 border border-white/5 space-y-4">
                             <Mail className="w-8 h-8 text-neon-cyan" />
                             <h3 className="font-bold text-white uppercase italic">Email</h3>
-                            <p className="text-gray-400 text-sm">contact@aks-eelam.fr</p>
+                            <p className="text-gray-400 text-sm">akseelam23@gmail.com</p>
                             <p className="text-gray-500 text-xs">Réponse sous 24h</p>
                         </div>
                         <div className="glass-morphism p-6 border border-white/5 space-y-4">
@@ -42,7 +42,7 @@ export default function ContactPage() {
                         <div className="glass-morphism p-6 border border-white/5 space-y-4">
                             <Clock className="w-8 h-8 text-neon-yellow" />
                             <h3 className="font-bold text-brand-gradient uppercase italic">Ouverture</h3>
-                            <p className="text-gray-400 text-sm">Lun - Dim: 09:30 - 04:00</p>
+                            <p className="text-gray-400 text-sm">Lun - Dim: 09:30 - 04:30</p>
                             <p className="text-gray-500 text-xs">Ouvert 7j/7</p>
                         </div>
                     </div>
