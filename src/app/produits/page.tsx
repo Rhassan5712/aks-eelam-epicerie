@@ -5,13 +5,17 @@ import { useState, useEffect, Suspense } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, SlidersHorizontal, Grid2X2, List } from 'lucide-react';
 import ProductCard from '@/components/ui/ProductCard';
-import { products, categories } from '@/data/products';
+import { categories, Product } from '@/data/products';
 import Button from '@/components/ui/Button';
+import { createClient } from '@/lib/supabase';
 
 function ProductsContent() {
     const searchParams = useSearchParams();
     const [selectedCategory, setSelectedCategory] = useState('tous');
     const [searchQuery, setSearchQuery] = useState('');
+    const [products, setProducts] = useState<Product[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const supabase = createClient();
 
     useEffect(() => {
         const category = searchParams.get('category');
@@ -19,6 +23,35 @@ function ProductsContent() {
             setSelectedCategory(category);
         }
     }, [searchParams]);
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+            console.log("Starting fetchProducts...");
+            setIsLoading(true);
+            try {
+                console.log("Calling supabase.from('products').select('*')");
+                const { data, error } = await supabase
+                    .from('products')
+                    .select('*');
+
+                console.log("Supabase response:", { data, error });
+
+                if (error) {
+                    console.error('Error fetching products:', error);
+                } else if (data) {
+                    console.log("Products fetched successfully:", data.length);
+                    setProducts(data as Product[]);
+                }
+            } catch (err) {
+                console.error('Unexpected error:', err);
+            } finally {
+                console.log("Setting isLoading to false");
+                setIsLoading(false);
+            }
+        };
+
+        fetchProducts();
+    }, []);
 
     const filteredProducts = products.filter(product => {
         const matchesCategory = selectedCategory === 'tous' || product.category === selectedCategory;
@@ -34,7 +67,7 @@ function ProductsContent() {
                     NOTRE <span className="neon-text-cyan">CATALOGUE</span>
                 </h1>
                 <p className="text-gray-400 max-w-2xl">
-                    Explorez notre large gamme de produits, des produits exotiques du monde entier aux nécessités quotidiennes.
+                    Explorez notre large gamme de produits, des produits exotiques du monde entier aux nécessités courantes.
                 </p>
             </div>
 
@@ -72,16 +105,25 @@ function ProductsContent() {
                 </div>
             </div>
 
-            {/* Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                <AnimatePresence mode="popLayout">
-                    {filteredProducts.map((product) => (
-                        <ProductCard key={product.id} product={product} />
+            {/* Loading State */}
+            {isLoading ? (
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                    {[...Array(8)].map((_, i) => (
+                        <div key={i} className="bg-navy-dark h-96 rounded-lg animate-pulse border border-white/5" />
                     ))}
-                </AnimatePresence>
-            </div>
+                </div>
+            ) : (
+                /* Grid */
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                    <AnimatePresence mode="popLayout">
+                        {filteredProducts.map((product) => (
+                            <ProductCard key={product.id} product={product} />
+                        ))}
+                    </AnimatePresence>
+                </div>
+            )}
 
-            {filteredProducts.length === 0 && (
+            {!isLoading && filteredProducts.length === 0 && (
                 <div className="text-center py-24 space-y-4">
                     <div className="text-6xl text-gray-600">🕵️‍♂️</div>
                     <h3 className="text-xl font-bold text-white">Aucun produit trouvé</h3>

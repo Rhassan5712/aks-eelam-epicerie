@@ -5,10 +5,34 @@ import { ArrowRight, ShoppingBag, Clock, MapPin, Star } from 'lucide-react';
 import Link from 'next/link';
 import Button from '@/components/ui/Button';
 import ProductCard from '@/components/ui/ProductCard';
-import { products, categories } from '@/data/products';
+import { categories, Product } from '@/data/products';
+import { createClient } from '@/lib/supabase';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
-  const featuredProducts = products.filter(p => p.isFeatured);
+  const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
+  const supabase = createClient();
+
+  useEffect(() => {
+    const fetchFeaturedProducts = async () => {
+      try {
+        const { data, error } = await supabase
+          .from('products')
+          .select('*')
+          .eq('is_featured', true);
+
+        if (error) {
+          console.error('Error fetching featured products:', error);
+        } else if (data) {
+          setFeaturedProducts(data as Product[]);
+        }
+      } catch (err) {
+        console.error('Unexpected error:', err);
+      }
+    };
+
+    fetchFeaturedProducts();
+  }, []);
 
   return (
     <div className="space-y-24 pb-24">
